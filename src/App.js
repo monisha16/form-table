@@ -49,32 +49,34 @@ function TableComponent({ data, setUserData }) {
   return (
     <>
       <table className={"table_container"}>
-        <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th>Action</th>
-        </tr>
-        {Object.keys(data).map((id, index) => {
-          return (
-            <tr>
-              <td
-                onClick={() => {
-                  handleClick(id);
-                }}
-              >
-                {data[id].name}
-              </td>
-              <td
-                onClick={() => {
-                  handleClick(id);
-                }}
-              >
-                {data[id].location}
-              </td>
-              <td onClick={(e) => handleDelete(e, id)}></td>
-            </tr>
-          );
-        })}
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+          {Object.keys(data).map((id, index) => {
+            return (
+              <tr key={id}>
+                <td
+                  onClick={() => {
+                    handleClick(id);
+                  }}
+                >
+                  {data[id].name}
+                </td>
+                <td
+                  onClick={() => {
+                    handleClick(id);
+                  }}
+                >
+                  {data[id].location}
+                </td>
+                <td onClick={(e) => handleDelete(e, id)}></td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
       {modal && <UserModal data={data[selectedRow]} toggle={setModal} />}
     </>
