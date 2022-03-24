@@ -1,0 +1,55 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.table_container {
+  margin-top: 2rem;
+}
+.table_content {
+  display: flex;
+  flex-direction: row;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  background: grey;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:hover {
+  background: rgb(97, 88, 65);
+}
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+.modal_container {
+  /* position: relative; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  width: 10rem;
+  height: 10rem;
+  background: white;
+  border: 1px solid black;
+}
+.close_container {
+  display: flex;
+  width: 100%;
+  align-content: flex-end;
+}
+.close {
+  width: 2rem;
+}
